@@ -1,0 +1,32 @@
+spring:
+  profiles: "default"
+  security:
+    user:
+      name: "admin"
+      password: "JABAY_2019"
+      roles: "ENDPOINT_ADMIN"
+  data:
+    mongodb:
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      database: ${MONGODB_DATABASE:Mantell}
+      authentication-database: ${MONGODB_AUTHENTICATION_DB:admin}
+      auto-connect-retry: "true"
+      socket-keep-alive: "true"
+  management:
+    endpoints:
+      web:
+        base-path: "/monitoring"
+        path-mapping:
+          info: "/admin/info"
+    #batch:
+    # jdbc:
+    #  initialize-schema: "always"
+server:
+  port : 8082
+
+
+logging:
+  level:
+    root: ${LOGGING_SERVER_LEVEL:ERROR}
+    com.dubus: ${LOGGING_APP_LEVEL:DEBUG}
