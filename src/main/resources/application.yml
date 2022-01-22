@@ -7,8 +7,7 @@ spring:
       roles: "ENDPOINT_ADMIN"
   data:
     mongodb:
-      host: ${MONGODB_HOST:localhost}
-      port: ${MONGODB_PORT:27017}
+      uri: ${MONGO_URI:mongodb+srv://ADUMongo:Nova=mongo1337@cluster0.xtida.mongodb.net/Mantell?retryWrites=true&w=majority}
       database: ${MONGODB_DATABASE:Mantell}
       authentication-database: ${MONGODB_AUTHENTICATION_DB:admin}
       auto-connect-retry: "true"
